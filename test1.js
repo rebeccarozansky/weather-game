@@ -19,6 +19,8 @@ async function fn1() {
     return result;
 };
 */
+
+
 var firebaseConfig = {
   apiKey: "AIzaSyAzBQkDzjvGD5nT7NiOWCqBvqXr_wypWvI",
   authDomain: "my-app-85794.firebaseapp.com",
