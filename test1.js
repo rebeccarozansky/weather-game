@@ -127,7 +127,7 @@ function getRandomInt(max) {
 
 function makeBox(info,i){
   return `<div class="box"> <h2>${info.city_name} , ${info.country_name}</h2> 
-          <h3> ${info.latitude}° , ${info.longitude}° </h3>
+          
 
           <h4> Pressure: ${info.pressure}</h4>
           <h4> Humidity: ${info.humidity}</h4>
@@ -168,10 +168,26 @@ async function main(){
 
   });
     while(main_arr.length<3){
-      let arr = await fn2(getRandomInt(4000))
-      //console.log(arr.length)
+      let arr = []
+      let cit_arr = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii',
+      'Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts',
+      'Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York',
+      'North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island',
+      'South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin',
+      'Wyoming']
+
       for(var i=0;i<5;i++){
-        let arr2 = await fn6(arr[i].name)
+        var e = cit_arr[getRandomInt(49)];
+        var m = cities[e]
+        console.log(m)
+        arr.push({"city": m[getRandomInt(m.length-1)], "state": e})
+        console.log(arr[i])
+      }
+      console.log(cities[0])
+      console.log(arr)
+      for(var i=0;i<5;i++){
+
+        let arr2 = await fn6(arr[i].city)
         //console.log(arr[i])
         console.log(arr2)
         if(arr2!=false){
@@ -180,7 +196,7 @@ async function main(){
             'temp': arr2.data.main.temp, 'pressure': arr2.data.main.pressure,
             'humidity': arr2.data.main.humidity}
             */
-            var temp_arr = {'city_name': arr[i].name, 'country_name': arr[i].country, 'latitude': arr[i].latitude, 'longitude': arr[i].longitude,
+            var temp_arr = {'city_name': arr[i].city, 'country_name': arr[i].state, 'latitude': arr[i].lat, 'longitude': arr[i].lon,
             'temp': arr2.data.main.temp, 'pressure': arr2.data.main.pressure,
             'humidity': arr2.data.main.humidity}
             main_arr.push(temp_arr)
