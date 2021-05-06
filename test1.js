@@ -45,7 +45,7 @@ async function fn1() {
     return result.data;
 };
 
-async function fn2(n) {
+/* async function fn2(n) {
     const result = await axios({
         method: 'get',
         url: 'http://geodb-free-service.wirefreethought.com/v1/geo/cities?hateoasMode=off',
@@ -54,7 +54,7 @@ async function fn2(n) {
       });
     //console.log(result.data.data[4])
     return result.data.data;
-};
+}; */
 
 async function fn3() {
   const result = await axios({
@@ -69,7 +69,7 @@ async function fn3() {
 async function fn5() {
     const result = await axios({
         method: 'get',
-        url: 'http://api.openweathermap.org/data/2.5/weather?q=Balkh&APPID=3af313365da13c96b5e0308f2ddbd458',
+        url: 'https://api.openweathermap.org/data/2.5/weather?q=Balkh&APPID=3af313365da13c96b5e0308f2ddbd458',
         params:{units: 'imperial'},
       });
       console.log(result)
