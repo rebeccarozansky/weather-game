@@ -80,7 +80,7 @@ async function fn6(city) {
   try{
   const result = await axios({
       method: 'get',
-      url: 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=3af313365da13c96b5e0308f2ddbd458',
+      url: 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=3af313365da13c96b5e0308f2ddbd458',
       params:{units: 'imperial'},
     });
   
