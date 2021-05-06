@@ -1,3 +1,16 @@
+
+ var firebaseConfig = {
+    apiKey: keys.apiKey,
+    authDomain:  keys.authDomain,
+    projectId:  keys.projectId,
+    storageBucket:  keys.storageBucket,
+    messagingSenderId: keys.messagingSenderId,
+    appId:  keys.appId,
+    measurementId:  keys.measurementId
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
 var db = firebase.firestore();
 
 
