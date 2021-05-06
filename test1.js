@@ -20,7 +20,7 @@ async function fn1() {
 };
 */
 var firebaseConfig = {
-  apiKey: process.env.apiKey,
+  apiKey: "AIzaSyAzBQkDzjvGD5nT7NiOWCqBvqXr_wypWvI",
   authDomain: "my-app-85794.firebaseapp.com",
   projectId: "my-app-85794",
   storageBucket: "my-app-85794.appspot.com",
