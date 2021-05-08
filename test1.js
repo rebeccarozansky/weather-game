@@ -127,8 +127,7 @@ function getRandomInt(max) {
 
 function makeBox(info,i){
   return `<div class="box"> <h2>${info.city_name} , ${info.country_name}</h2> 
-          
-
+          <h4> Weather: ${info.weather}</h4>
           <h4> Pressure: ${info.pressure}</h4>
           <h4> Humidity: ${info.humidity}</h4>
           <input id=${i}> </input>
@@ -198,7 +197,7 @@ async function main(){
             */
             var temp_arr = {'city_name': arr[i].city, 'country_name': arr[i].state, 'latitude': arr[i].lat, 'longitude': arr[i].lon,
             'temp': arr2.data.main.temp, 'pressure': arr2.data.main.pressure,
-            'humidity': arr2.data.main.humidity}
+            'humidity': arr2.data.main.humidity, 'weather':arr2.data.weather[0].main+","+arr2.data.weather[0].description}
             main_arr.push(temp_arr)
         }
           //console.log(arr2)
@@ -331,6 +330,7 @@ function signUp(email,password){
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    alert(error.message)
     // ..
   });
 }
@@ -350,6 +350,8 @@ function signIn(email,password){
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    alert(error.message)
+
     // ..
   });
 }
