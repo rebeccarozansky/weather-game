@@ -299,7 +299,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     
 
     // No user is signed in.
-    $("body").append(`<input id="us" type="username"> Username </input>`)
+    $("body").append(`<input id="us" type="username"> Email </input>`)
     $("body").append(`<input id="pw" type="password"> Password </input>`)
     $("body").append(`<button id="su" type="signup"> Sign Up</button>`)
     $("body").append(`<button id="si" type="signin"> Sign In</button>`)
